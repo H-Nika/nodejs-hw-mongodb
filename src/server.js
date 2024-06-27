@@ -25,7 +25,8 @@ export const setupServer = () => {
   app.get('/contacts', async (req, res) => {
     try {
       const contacts = await getAllContacts();
-      res.status(200).json({
+        res.status(200).json({
+          status: 'Success',
         message: 'Successfully found contacts!',
         data: contacts,
       });
@@ -45,12 +46,14 @@ export const setupServer = () => {
           message: `Not found`,
         });
       }
-      res.status(200).json({
+        res.status(200).json({
+        status: 'Success',
         message: `Successfully found contact with id ${contactId}!`,
         data: contact,
       });
     } catch (e) {
-      res.status(404).json({
+        res.status(404).json({
+        status: 'error',
         message: `Not found`,
       });
     }
