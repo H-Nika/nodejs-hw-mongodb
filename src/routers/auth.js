@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { ctrlWrapper } from '../utils/ctrlWrapper.js';
 import { registerUserSchema } from '../validation/auth.js';
 import {
-  registerUserController
+  registerUserController,
   requestResetEmailController,
   resetPasswordController,
 } from '../controllers/auth.js';
