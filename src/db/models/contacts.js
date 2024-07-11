@@ -12,9 +12,11 @@ const Contact = new Schema(
     },
     email: {
       type: String,
+      required: false,
     },
     isFavourite: {
       type: Boolean,
+      required: true,
       default: false,
     },
     contactType: {
@@ -28,11 +30,13 @@ const Contact = new Schema(
       required: true,
       ref: 'users',
     },
+        photo: {
+      type: String,
+      required: false,
+    },
   },
   {
     timestamps: true,
-    versionKey: false,
-
   },
 );
 
